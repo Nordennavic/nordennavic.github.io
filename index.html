@@ -31,14 +31,29 @@
             justify-content: center;
         }
 
-        .sun {
+        #sun {
             width: 1.5em;
             height: 1.5em;
             border-radius: 50%;
             position: fixed;
             border: 2px solid #FB872B;
             background: radial-gradient(circle at 50%, #ffff00, #FB872B);
-            box-shadow: 0 0px 15px rgb(255, 204, 0, .6);
+            animation: animate 5s linear infinite;
+        }
+        @keyframes animate {
+            0%
+            {
+                box-shadow:  0 0 0 3px rgb(255, 191, 0, .2), 0 0 0 5px rgb(255, 191, 0, .1),  0 0 0 10px rgb(255, 191, 0, .05);
+            }
+            50%
+            {
+                box-shadow:  0 0 0 5px rgb(255, 191, 0, .2), 0 0 0 10px rgb(255, 191, 0, .1), 0 0 0 15px rgb(255, 191, 0, .05);
+            }
+            100%
+            {
+                box-shadow: 0 0 0 3px rgb(255, 191, 0, .2),  0 0 0 5px rgb(255, 191, 0, .1), 0 0 0 10px rgb(255, 191, 0, .05);
+            }
+
         }
 
         #planet {
@@ -139,7 +154,7 @@
 <body id="body">
 <div id="path">
     <div id="mercury"></div>
-    <div class="sun"></div>
+    <div id="sun"></div>
     <div id="venus"></div>
     <div id="planet">
         <div id="moon"></div>

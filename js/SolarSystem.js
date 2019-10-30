@@ -9,12 +9,12 @@ let jupiter = document.getElementById("jupiter");
 let saturn = document.getElementById("saturn");
 let uranus = document.getElementById("uranus");
 let neptune = document.getElementById("neptune");
+let sun = document.getElementById("sun");
 let g = false;
-let year = 0;
+let i = 0;
 
 a.onload= function() {
     let start = Date.now();
-    var i = 0;
     let a = 1;
     let x;
     let y;
@@ -35,11 +35,6 @@ a.onload= function() {
         }
         if(i===100)
             clearInterval(timer);
-       // if(g){
-        //   year = timePassed;
-         //   g = false;
-      //  }
-
         moon.style.left = Math.cos(timePassed * 0.01 * a) * (-12) + 'px';
         moon.style.top = Math.sin(timePassed * 0.01 * a) * (12) + 'px';
         mercury.style.left = Math.cos(timePassed * 0.018 * a) * (-2) + 2.65 + 'em';
@@ -57,7 +52,7 @@ a.onload= function() {
         neptune.style.left = Math.cos(timePassed * 0.0000341 * a) * (-20) -2.46 + 'em';
         neptune.style.top = Math.sin(timePassed * 0.0000341 * a) * (20) + 'em';
     }, 24);
-}
+};
 
 /*let a = document.getElementById("body");
 let b =  document.getElementById("label");
