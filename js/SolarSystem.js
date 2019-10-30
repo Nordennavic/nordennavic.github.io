@@ -33,7 +33,7 @@ a.onload= function() {
         {
             g = true;
         }
-        if(i===100)
+        if(i===0)
             clearInterval(timer);
        // if(g){
         //   year = timePassed;
