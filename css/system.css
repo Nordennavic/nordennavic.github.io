@@ -1,0 +1,127 @@
+#body {
+  width: 100vw;
+  height: 90vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: crosshair;
+  background: radial-gradient(circle at 50%, #282c35, black);
+}
+
+#path {
+  width: 40em;
+  height: 40em;
+  border-radius: 50%;
+  border: 2px solid #282c35;
+  background: #282c35;
+  align-items: center;
+  content-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.sun {
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  position: fixed;
+  border: 2px solid #FB872B;
+  background: radial-gradient(circle at 50%, #ffff00, #FB872B);
+  box-shadow: 0 0px 15px rgb(255, 204, 0, .6);
+}
+
+#planet {
+  left: 1.65em;
+  position: relative;
+  cursor: pointer;
+  width: 0.6em;
+  align-items: center;
+  content-align: center;
+  justify-content: center;
+  display: flex;
+  height: 0.6em;
+  border-radius: 50%;
+  background: dodgerblue;
+}
+
+#mars {
+  left: 1.055em;
+  position: relative;
+  cursor: pointer;
+  width: 0.55em;
+  height: 0.55em;
+  border-radius: 50%;
+  background: brown;
+}
+
+#moon {
+  position: relative;
+  cursor: pointer;
+  width: 0.3em;
+  height: 0.3em;
+  border-radius: 50%;
+  background: gray;
+}
+
+#mercury {
+  left: 2.4em;
+  position: relative;
+  cursor: pointer;
+  width: 0.4em;
+  height: 0.4em;
+  border-radius: 50%;
+  background: #5A3E36;
+}
+
+#venus {
+  left: 2.16em;
+  position: relative;
+  cursor: pointer;
+  width: 0.5em;
+  height: 0.5em;
+  border-radius: 50%;
+  background: sandybrown;
+}
+
+#jupiter {
+  left:0.16em;
+  position: relative;
+  cursor: pointer;
+  width: 1.2em;
+  height: 1.2em;
+  border-radius: 50%;
+  background: #ffe4b5;
+}
+
+#saturn {
+  right: 1em;
+  position: relative;
+  cursor: pointer;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  background: #fff999;
+}
+
+#uranus {
+  right: 1.8em;
+  position: relative;
+  cursor: pointer;
+  width: 0.7em;
+  height: 0.7em;
+  border-radius: 50%;
+  background: #4188D2;
+}
+
+#neptune {
+  right: 2.46em;
+  position: relative;
+  cursor: pointer;
+  width: 0.67em;
+  height: 0.67em;
+  border-radius: 50%;
+  background: #04376C;
+}
