@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Solar System Model</title>
+    <link href="css/system.css" type="stylesheet">
+    <script src="https://js.cx/libs/animate.js"></script>
+    <style>
+        #body {
+            width: 100vw;
+            height: 90vh;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: crosshair;
+            background: radial-gradient(circle at 50%, #282c35, black);
+        }
+
+        #path {
+            width: 40em;
+            height: 40em;
+            border-radius: 50%;
+            border: 2px solid #282c35;
+            background: #282c35;
+            align-items: center;
+            content-align: center;
+            display: flex;
+            justify-content: center;
+        }
+
+        .sun {
+            width: 1.5em;
+            height: 1.5em;
+            border-radius: 50%;
+            position: fixed;
+            border: 2px solid #FB872B;
+            background: radial-gradient(circle at 50%, #ffff00, #FB872B);
+            box-shadow: 0 0px 15px rgb(255, 204, 0, .6);
+        }
+
+        #planet {
+            left: 1.65em;
+            position: relative;
+            cursor: pointer;
+            width: 0.6em;
+            align-items: center;
+            content-align: center;
+            justify-content: center;
+            display: flex;
+            height: 0.6em;
+            border-radius: 50%;
+            background: dodgerblue;
+        }
+
+        #mars {
+            left: 1.055em;
+            position: relative;
+            cursor: pointer;
+            width: 0.55em;
+            height: 0.55em;
+            border-radius: 50%;
+            background: brown;
+        }
+
+        #moon {
+            position: relative;
+            cursor: pointer;
+            width: 0.3em;
+            height: 0.3em;
+            border-radius: 50%;
+            background: gray;
+        }
+
+        #mercury {
+            left: 2.4em;
+            position: relative;
+            cursor: pointer;
+            width: 0.4em;
+            height: 0.4em;
+            border-radius: 50%;
+            background: #5A3E36;
+        }
+
+        #venus {
+            left: 2.16em;
+            position: relative;
+            cursor: pointer;
+            width: 0.5em;
+            height: 0.5em;
+            border-radius: 50%;
+            background: sandybrown;
+        }
+
+        #jupiter {
+            left:0.16em;
+            position: relative;
+            cursor: pointer;
+            width: 1.2em;
+            height: 1.2em;
+            border-radius: 50%;
+            background: #ffe4b5;
+        }
+
+        #saturn {
+            right: 1em;
+            position: relative;
+            cursor: pointer;
+            width: 1em;
+            height: 1em;
+            border-radius: 50%;
+            background: #fff999;
+        }
+
+        #uranus {
+            right: 1.8em;
+            position: relative;
+            cursor: pointer;
+            width: 0.7em;
+            height: 0.7em;
+            border-radius: 50%;
+            background: #4188D2;
+        }
+
+        #neptune {
+            right: 2.46em;
+            position: relative;
+            cursor: pointer;
+            width: 0.67em;
+            height: 0.67em;
+            border-radius: 50%;
+            background: #04376C;
+        }
+    </style>
+</head>
+
+<body id="body">
+<div id="path">
+    <div id="mercury"></div>
+    <div class="sun"></div>
+    <div id="venus"></div>
+    <div id="planet">
+        <div id="moon"></div>
+    </div>
+    <div id="mars"></div>
+    <div id="jupiter"></div>
+    <div id="saturn"></div>
+    <div id="uranus"></div>
+    <div id="neptune"></div>
+</div>
+<h3 id="label" >0</h3>
+<script src="js/SolarSystem.js"></script>
+<!--<script>
+    body.onload= function() {
+        let start = Date.now();
+        var i = 0;
+        let a = 10;
+        let timer = setInterval(function() {
+            let timePassed = Date.now() - start;
+            planet.style.left = Math.cos(timePassed * 0.00248 * a) * (-7) + 1.45 + 'em';
+            planet.style.top = Math.sin(timePassed * 0.00248 * a) * (7) + 'em';
+            if(planet.style.left === x &&  planet.style.top === y )
+            {
+                i++;
+                document.getElementById(label).innerHTML = '' + i ;
+            }
+            if(i===179)
+                clearInterval(timer);
+            if(i===0){
+                var x = planet.style.left;
+                var y = planet.style.top;
+            }
+
+                moon.style.left = Math.cos(timePassed * 0.01 * a) * (-12) + 'px';
+            moon.style.top = Math.sin(timePassed * 0.01 * a) * (12) + 'px';
+            mercury.style.left = Math.cos(timePassed * 0.004 * a) * (-2) + 2.65 + 'em';
+            mercury.style.top = Math.sin(timePassed * 0.004 * a) * (2) + 'em';
+            venus.style.left = Math.cos(timePassed * 0.00292 * a) * (-4) + 2.16 + 'em';
+            venus.style.top = Math.sin(timePassed * 0.00292 * a) * (4) + 'em';
+            mars.style.left = Math.cos(timePassed * 0.00201 * a) * (-10) + 1.055 + 'em';
+            mars.style.top = Math.sin(timePassed * 0.00201 * a) * (10) + 'em';
+            jupiter.style.left = Math.cos(timePassed * 0.00109 * a) * (-13) -0.16 + 'em';
+            jupiter.style.top = Math.sin(timePassed * 0.00109 * a) * (13) + 'em';
+            saturn.style.left = Math.cos(timePassed * 0.0008 * a) * (-16) -1 + 'em';
+            saturn.style.top = Math.sin(timePassed * 0.0008 * a) * (16) + 'em';
+            uranus.style.left = Math.cos(timePassed * 0.00057 * a) * (-18) -1.8 + 'em';
+            uranus.style.top = Math.sin(timePassed * 0.00057 * a) * (18) + 'em';
+            neptune.style.left = Math.cos(timePassed * 0.00045 * a) * (-20) -2.46 + 'em';
+            neptune.style.top = Math.sin(timePassed * 0.00045 * a) * (20) + 'em';
+        }, 20);
+    }
+</script>
+-->
+
+
+</body>
+
+</html>
