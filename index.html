@@ -7,7 +7,7 @@
     <script src="https://js.cx/libs/animate.js"></script>
    <style>
         #body {
-            width: 100vh;
+            width: 100%;
             height: 90vh;
             margin: 0;
             padding: 10px;
@@ -19,10 +19,10 @@
         }
 
         #path {
-            width: 50em;
-            height: 50em;
+            width: 55em;
+            height: 55em;
             border-radius: 50%;
-            background: radial-gradient(circle at 50%, #2c0992, #2c0992 40%, #23067e, #23067e 10%);
+            background: radial-gradient(circle at 50%, #2c0992, #2c0992 35%, #23067e, #23067e 10%);
             align-items: center;
             margin-left:auto;
             margin-right: auto;
@@ -39,7 +39,22 @@
             position: absolute;
             border: 1px solid yellow;
             background: radial-gradient(circle at 50%, white, white 55%, yellow, yellow 57%);
-            box-shadow: 0 0px 21px rgb(255, 190, 0, 1);
+            animation: animate 5s linear infinite;
+        }
+        @keyframes animate {
+            0%
+            {
+                box-shadow: 0 0 0 2px rgb(255, 191, 0, .4),  0 0 0 6px rgb(255, 191, 0, .2);
+            }
+            50%
+            {
+                box-shadow: 0 0 0 6px rgb(255, 191, 0, .4), 0 0 0 12px rgb(255, 191, 0, .2);
+            }
+            100%
+            {
+                box-shadow:  0 0 0 2px rgb(255, 191, 0, .4), 0 0 0 6px rgb(255, 191, 0, .2);
+            }
+
         }
 
         #planet {
@@ -50,10 +65,49 @@
             align-items: center;
             content-align: center;
             justify-content: center;
-            display: flex;
             height: 1.2em;
             border-radius: 50%;
-            background: #1b8cd9;
+            background: #0e39af;
+            animation: planetSh 7.15s infinite;
+        }
+
+        @keyframes planetSh {
+            0%
+            {
+                box-shadow: -1px 0 0 1px rgb(78, 155, 244, .9) inset;
+            }
+            12.5%
+            {
+                box-shadow: -1px 1px 0 1px rgb(78, 155, 244, .9) inset;
+            }
+            25%
+            {
+                box-shadow:  0px 1px 0px 1px rgb(78, 155, 244, .9) inset;
+            }
+            37.5%
+            {
+                box-shadow: 1px 1px 0 1px rgb(78, 155, 244, .9) inset;
+            }
+            50%
+            {
+                box-shadow: 1px 0px 0 1px rgb(78, 155, 244, .9) inset;
+            }
+            65.5%
+            {
+                box-shadow:  1px -1px 0px 1px rgb(78, 155, 244, .9) inset;
+            }
+            75%
+            {
+                box-shadow: 0px -1px 0 1px rgb(78, 155, 244, .9) inset;
+            }
+            87.5%
+            {
+                box-shadow: -1px -1px 0 1px rgb(78, 155, 244, .9) inset;
+            }
+            100%
+            {
+                box-shadow:  -1px 0px 0px 1px rgb(78, 155, 244, .9) inset;
+            }
         }
 
         #mars {
@@ -61,9 +115,50 @@
             position: relative;
             cursor: pointer;
             width: 1.1em;
+            overflow: hidden;
             height: 1.1em;
             border-radius: 50%;
-            background: brown;
+            background: #661073;
+            animation: marsSh 12.5s infinite;
+        }
+
+        @keyframes marsSh {
+            0%
+            {
+                box-shadow: -1px 0 0 1px rgb(207, 47, 101, .9) inset;
+            }
+            12.5%
+            {
+                box-shadow: -1px 1px 0 1px rgb(207, 47, 101, .9) inset;
+            }
+            25%
+            {
+                box-shadow:  0px 1px 0px 1px rgb(207, 47, 101, .9) inset;
+            }
+            37.5%
+            {
+                box-shadow: 1px 1px 0 1px rgb(207, 47, 101, .9) inset;
+            }
+            50%
+            {
+                box-shadow: 1px 0px 0 1px rgb(207, 47, 101, .9) inset;
+            }
+            65.5%
+            {
+                box-shadow:  1px -1px 0px 1px rgb(207, 47, 101, .9) inset;
+            }
+            75%
+            {
+                box-shadow: 0px -1px 0 1px rgb(207, 47, 101, .9) inset;
+            }
+            87.5%
+            {
+                box-shadow: -1px -1px 0 1px rgb(207, 47, 101, .9) inset;
+            }
+            100%
+            {
+                box-shadow:  -1px 0px 0px 1px rgb(207, 47, 101, .9) inset;
+            }
         }
 
         #moon {
@@ -71,8 +166,49 @@
             cursor: pointer;
             width: 0.6em;
             height: 0.6em;
+            overflow: hidden;
             border-radius: 50%;
-            background: gray;
+            background: #4c3da3;
+            animation: moonSh 7.15s infinite;
+        }
+
+        @keyframes moonSh {
+            0%
+            {
+                box-shadow: -1px 0 0 1px rgb(181, 166, 221, .9) inset;
+            }
+            12.5%
+            {
+                box-shadow: -1px 1px 0 1px rgb(181, 166, 221, .9) inset;
+            }
+            25%
+            {
+                box-shadow:  0px 1px 0px 1px rgb(181, 166, 221, .9) inset;
+            }
+            37.5%
+            {
+                box-shadow: 1px 1px 0 1px rgb(181, 166, 221, .9) inset;
+            }
+            50%
+            {
+                box-shadow: 1px 0px 0 1px rgb(181, 166, 221, .9) inset;
+            }
+            65.5%
+            {
+                box-shadow:  1px -1px 0px 1px rgb(181, 166, 221, .9) inset;
+            }
+            75%
+            {
+                box-shadow: 0px -1px 0 1px rgb(181, 166, 221, .9) inset;
+            }
+            87.5%
+            {
+                box-shadow: -1px -1px 0 1px rgb(181, 166, 221, .9) inset;
+            }
+            100%
+            {
+                box-shadow:  -1px 0px 0px 1px rgb(181, 166, 221, .9) inset;
+            }
         }
 
         #mercury {
@@ -80,9 +216,51 @@
             position: relative;
             cursor: pointer;
             width: 0.8em;
+            overflow: hidden;
             height: 0.8em;
             border-radius: 50%;
-            background: #5A3E36;
+            background: #813abd;
+            animation: mercurySh 1.748s linear infinite;
+
+        }
+
+        @keyframes mercurySh {
+            0%
+            {
+                box-shadow: -1px 0 0 1px rgb(243, 174, 2, .9) inset;
+            }
+            12.5%
+            {
+                box-shadow: -1px 1px 0 1px rgb(243, 174, 2, .9) inset;
+            }
+            25%
+            {
+                box-shadow:  0px 1px 0px 1px rgb(243, 174, 2, .9) inset;
+            }
+            37.5%
+            {
+                box-shadow: 1px 1px 0 1px rgb(243, 174, 2, .9) inset;
+            }
+            50%
+            {
+                box-shadow: 1px 0px 0 1px rgb(243, 174, 2, .9) inset;
+            }
+            65.5%
+            {
+                box-shadow:  1px -1px 0px 1px rgb(243, 174, 2, .9) inset;
+            }
+            75%
+            {
+                box-shadow: 0px -1px 0 1px rgb(243, 174, 2, .9) inset;
+            }
+            87.5%
+            {
+                box-shadow: -1px -1px 0 1px rgb(243, 174, 2, .9) inset;
+            }
+            100%
+            {
+                box-shadow:  -1px 0px 0px 1px rgb(243, 174, 2, .9) inset;
+            }
         }
 
         #venus {
@@ -91,8 +269,48 @@
             cursor: pointer;
             width: 1em;
             height: 1em;
+            overflow: hidden;
             border-radius: 50%;
-            background: sandybrown;
+            background: #753e69;
+            animation: venusSh 4.83s infinite;
+        }
+        @keyframes venusSh {
+            0%
+            {
+                box-shadow: -1px 0 0 1px rgb(244, 154, 91, .9) inset;
+            }
+            12.5%
+            {
+                box-shadow: -1px 1px 0 1px rgb(244, 154, 91, .9) inset;
+            }
+            25%
+            {
+                box-shadow:  0px 1px 0px 1px rgb(244, 154, 91, .9) inset;
+            }
+            37.5%
+            {
+                box-shadow: 1px 1px 0 1px rgb(244, 154, 91, .9) inset;
+            }
+            50%
+            {
+                box-shadow: 1px 0px 0 1px rgb(244, 154, 91, .9) inset;
+            }
+            65.5%
+            {
+                box-shadow:  1px -1px 0px 1px rgb(244, 154, 91, .9) inset;
+            }
+            75%
+            {
+                box-shadow: 0px -1px 0 1px rgb(244, 154, 91, .9) inset;
+            }
+            87.5%
+            {
+                box-shadow: -1px -1px 0 1px rgb(244, 154, 91, .9) inset;
+            }
+            100%
+            {
+                box-shadow:  -1px 0px 0px 1px rgb(244, 154, 91, .9) inset;
+            }
         }
 
         #jupiter {
@@ -100,9 +318,50 @@
             position: relative;
             cursor: pointer;
             width: 2.4em;
+            overflow: hidden;
             height: 2.4em;
             border-radius: 50%;
-            background: #ffe4b5;
+            background: #703867;
+            animation: jupiterSh 88s infinite;
+        }
+
+        @keyframes jupiterSh {
+            0%
+            {
+                box-shadow: -1px 0 0 1px rgb(241, 133, 86, .9) inset;
+            }
+            12.5%
+            {
+                box-shadow: -1px 1px 0 1px rgb(241, 133, 86, .9) inset;
+            }
+            25%
+            {
+                box-shadow:  0px 1px 0px 1px rgb(241, 133, 86, .9) inset;
+            }
+            37.5%
+            {
+                box-shadow: 1px 1px 0 1px rgb(241, 133, 86, .9) inset;
+            }
+            50%
+            {
+                box-shadow: 1px 0px 0 1px rgb(241, 133, 86, .9) inset;
+            }
+            65.5%
+            {
+                box-shadow:  1px -1px 0px 1px rgb(241, 133, 86, .9) inset;
+            }
+            75%
+            {
+                box-shadow: 0px -1px 0 1px rgb(241, 133, 86, .9) inset;
+            }
+            87.5%
+            {
+                box-shadow: -1px -1px 0 1px rgb(241, 133, 86, .9) inset;
+            }
+            100%
+            {
+                box-shadow:  -1px 0px 0px 1px rgb(241, 133, 86, .9) inset;
+            }
         }
 
         #saturn {
@@ -112,28 +371,185 @@
             width: 2em;
             height: 2em;
             border-radius: 50%;
-            background: #fff999;
+            background: #755972;
+            animation: saturnSh 220s infinite;
+        }
+        @keyframes saturnSh {
+            0%
+            {
+                box-shadow: -1px 0 0 1px rgb(250, 209, 118, .9) inset;
+            }
+            12.5%
+            {
+                box-shadow: -1px 1px 0 1px rgb(250, 209, 118, .9) inset;
+            }
+            25%
+            {
+                box-shadow:  0px 1px 0px 1px rgb(250, 209, 118, .9) inset;
+            }
+            37.5%
+            {
+                box-shadow: 1px 1px 0 1px rgb(250, 209, 118, .9) inset;
+            }
+            50%
+            {
+                box-shadow: 1px 0px 0 1px rgb(250, 209, 118, .9) inset;
+            }
+            65.5%
+            {
+                box-shadow:  1px -1px 0px 1px rgb(250, 209, 118, .9) inset;
+            }
+            75%
+            {
+                box-shadow: 0px -1px 0 1px rgb(250, 209, 118, .9) inset;
+            }
+            87.5%
+            {
+                box-shadow: -1px -1px 0 1px rgb(250, 209, 118, .9) inset;
+            }
+            100%
+            {
+                box-shadow:  -1px 0px 0px 1px rgb(250, 209, 118, .9) inset;
+            }
         }
 
         #uranus {
             right: 1.8em;
             position: relative;
             cursor: pointer;
+            overflow: hidden;
             width: 1.4em;
             height: 1.4em;
             border-radius: 50%;
-            background: #4188D2;
+            background: #2f61a4;
+            animation: uranusSh 610s infinite;
         }
-
+        @keyframes uranusSh {
+            0%
+            {
+                box-shadow: -1px 0 0 1px rgb(91, 227, 225, .9) inset;
+            }
+            12.5%
+            {
+                box-shadow: -1px 1px 0 1px rgb(91, 227, 225, .9) inset;
+            }
+            25%
+            {
+                box-shadow:  0px 1px 0px 1px rgb(91, 227, 225, .9) inset;
+            }
+            37.5%
+            {
+                box-shadow: 1px 1px 0 1px rgb(91, 227, 225, .9) inset;
+            }
+            50%
+            {
+                box-shadow: 1px 0px 0 1px rgb(91, 227, 225, .9) inset;
+            }
+            65.5%
+            {
+                box-shadow:  1px -1px 0px 1px rgb(91, 227, 225, .9) inset;
+            }
+            75%
+            {
+                box-shadow: 0px -1px 0 1px rgb(91, 227, 225, .9) inset;
+            }
+            87.5%
+            {
+                box-shadow: -1px -1px 0 1px rgb(91, 227, 225, .9) inset;
+            }
+            100%
+            {
+                box-shadow:  -1px 0px 0px 1px rgb(91, 227, 225, .9) inset;
+            }
+        }
+        @keyframes ringSh {
+            0%
+            {
+                box-shadow: -2px 0 0 2px rgb(30, 154, 184, .9) inset;
+            }
+            12.5%
+            {
+                box-shadow: -2px 2px 0 2px rgb(30, 154, 184, .9) inset;
+            }
+            25%
+            {
+                box-shadow:  0px 2px 0px 2px rgb(30, 154, 184, .9) inset;
+            }
+            37.5%
+            {
+                box-shadow: 2px 2px 0 2px rgb(30, 154, 184, .9) inset;
+            }
+            50%
+            {
+                box-shadow: 2px 0px 0 2px rgb(30, 154, 184, .9) inset;
+            }
+            65.5%
+            {
+                box-shadow:  2px -2px 0px 2px rgb(30, 154, 184, .9) inset;
+            }
+            75%
+            {
+                box-shadow: 0px -2px 0 2px rgb(30, 154, 184, .9) inset;
+            }
+            87.5%
+            {
+                box-shadow: -2px -2px 0 2px rgb(30, 154, 184, .9) inset;
+            }
+            100%
+            {
+                box-shadow:  -2px 0px 0px 2px rgb(30, 154, 184, .9) inset;
+            }
+        }
         #neptune {
             right: 2.46em;
             position: relative;
             cursor: pointer;
             width: 1.34em;
+            overflow: hidden;
             height: 1.34em;
             border-radius: 50%;
-            background: #04376C;
+            background: #3a13ac;
+            animation: neptuneSh 930s infinite;
         }
+        @keyframes neptuneSh {
+            0%
+            {
+                box-shadow: -1px 0 0 1px rgb(107, 35, 271, .9) inset;
+            }
+            12.5%
+            {
+                box-shadow: -1px 1px 0 1px rgb(107, 35, 271, .9) inset;
+            }
+            25%
+            {
+                box-shadow:  0px 1px 0px 1px rgb(107, 35, 271, .9) inset;
+            }
+            37.5%
+            {
+                box-shadow: 1px 1px 0 1px rgb(107, 35, 271, .9) inset;
+            }
+            50%
+            {
+                box-shadow: 1px 0px 0 1px rgb(107, 35, 271, .9) inset;
+            }
+            65.5%
+            {
+                box-shadow:  1px -1px 0px 1px rgb(107, 35, 271, .9) inset;
+            }
+            75%
+            {
+                box-shadow: 0px -1px 0 1px rgb(107, 35, 271, .9) inset;
+            }
+            87.5%
+            {
+                box-shadow: -1px -1px 0 1px rgb(107, 35, 271, .9) inset;
+            }
+            100%
+            {
+                box-shadow:  -1px 0px 0px 1px rgb(107, 35, 271, .9) inset;
+            }
+        }
+
        .counter{
            margin-top: 1000px;
            font-family: "Consolas", Arial, serif;
@@ -147,7 +563,8 @@
 
 <body id="body">
 <div id="path">
-    <div id="mercury"></div>
+    <div id="mercury">
+    </div>
     <div class="sun"></div>
     <div id="venus"></div>
     <div id="planet">
@@ -155,7 +572,20 @@
     </div>
     <div id="mars"></div>
     <div id="jupiter"></div>
-    <div id="saturn"></div>
+    <div id="saturn">
+        <div style="position: relative;
+            cursor: pointer;
+            left: -1em;
+            top: -1em;
+            width: 4em;
+            overflow: hidden;
+            height: 4em;
+            border-radius: 50%;
+            background: radial-gradient(circle at 50%, transparent, transparent 50%, #155d9e, #155d9e 60%, #194a99, #194a99 70%);
+            animation: ringSh 220s infinite;
+
+"></div>
+    </div>
     <div id="uranus"></div>
     <div id="neptune"></div>
 </div>
