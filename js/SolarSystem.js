@@ -9,19 +9,18 @@ let jupiter = document.getElementById("jupiter");
 let saturn = document.getElementById("saturn");
 let uranus = document.getElementById("uranus");
 let neptune = document.getElementById("neptune");
-let sun = document.getElementById("sun");
 let g = false;
-let i = 0;
-
+let year = 0;
 a.onload= function() {
     let start = Date.now();
-    let a = 1;
+    var i = 0;
+    let a = 0.2;
     let x;
     let y;
     let timer = setInterval(function() {
         let timePassed = Date.now() - start;
-        planet.style.left = Math.cos(timePassed * 0.0044 * a) * (-7) + 1.45 + 'em';
-        planet.style.top = Math.sin(timePassed * 0.0044 * a) * (7) + 'em';
+        planet.style.left = Math.cos(timePassed * 0.0044 * a) * (-8) + 3 + 'em';
+        planet.style.top = Math.sin(timePassed * 0.0044 * a) * (8) + 'em';
         y = parseInt(planet.style.top.substr(0,3), 10);
         if(y > 0 && g) //"1.0002em"
         {
@@ -35,24 +34,29 @@ a.onload= function() {
         }
         if(i===100)
             clearInterval(timer);
-        moon.style.left = Math.cos(timePassed * 0.01 * a) * (-12) + 'px';
-        moon.style.top = Math.sin(timePassed * 0.01 * a) * (12) + 'px';
-        mercury.style.left = Math.cos(timePassed * 0.018 * a) * (-2) + 2.65 + 'em';
-        mercury.style.top = Math.sin(timePassed * 0.018 * a) * (2) + 'em';
-        venus.style.left = Math.cos(timePassed * 0.0065 * a) * (-4) + 2.16 + 'em';
-        venus.style.top = Math.sin(timePassed * 0.0065 * a) * (4) + 'em';
-        mars.style.left = Math.cos(timePassed * 0.0025 * a) * (-10) + 1.055 + 'em';
-        mars.style.top = Math.sin(timePassed * 0.0025 * a) * (10) + 'em';
-        jupiter.style.left = Math.cos(timePassed * 0.0003635 * a) * (-13) -0.16 + 'em';
-        jupiter.style.top = Math.sin(timePassed * 0.0003635 * a) * (13) + 'em';
-        saturn.style.left = Math.cos(timePassed * 0.0001514 * a) * (-16) -1 + 'em';
-        saturn.style.top = Math.sin(timePassed * 0.0001514 * a) * (16) + 'em';
-        uranus.style.left = Math.cos(timePassed * 0.0000523 * a) * (-18) -1.8 + 'em';
-        uranus.style.top = Math.sin(timePassed * 0.0000523 * a) * (18) + 'em';
-        neptune.style.left = Math.cos(timePassed * 0.0000341 * a) * (-20) -2.46 + 'em';
-        neptune.style.top = Math.sin(timePassed * 0.0000341 * a) * (20) + 'em';
-    }, 24);
-};
+        // if(g){
+        //   year = timePassed;
+        //   g = false;
+        //  }
+
+        moon.style.left = Math.cos(timePassed * 0.01 * a) * (-16) + 5  +'px';
+        moon.style.top = Math.sin(timePassed * 0.01 * a) * (16) + 5 + 'px';
+        mercury.style.left = Math.cos(timePassed * 0.018 * a) * (-4) + 5.3 + 'em';
+        mercury.style.top = Math.sin(timePassed * 0.018 * a) * (4) + 'em';
+        venus.style.left = Math.cos(timePassed * 0.0065 * a) * (-6) + 4.36 + 'em';
+        venus.style.top = Math.sin(timePassed * 0.0065 * a) * (6) + 'em';
+        mars.style.left = Math.cos(timePassed * 0.0025 * a ) * (-12) + 1.7 + 'em';
+        mars.style.top = Math.sin(timePassed * 0.0025 * a) * (12) + 'em';
+        jupiter.style.left = Math.cos(timePassed * 0.0003635 * a) * (-16) + 0.3 + 'em';
+        jupiter.style.top = Math.sin(timePassed * 0.0003635 * a) * (16) + 'em';
+        saturn.style.left = Math.cos(timePassed * 0.0001514 * a) * (-20) -2 + 'em';
+        saturn.style.top = Math.sin(timePassed * 0.0001514 * a) * (20) + 'em';
+        uranus.style.left = Math.cos(timePassed * 0.0000523 * a) * (-24) -3.8 + 'em';
+        uranus.style.top = Math.sin(timePassed * 0.0000523 * a) * (24) + 'em';
+        neptune.style.left = Math.cos(timePassed * 0.0000341 * a) * (-26) -5 + 'em';
+        neptune.style.top = Math.sin(timePassed * 0.0000341 * a) * (26) + 'em';
+    }, 1);
+}
 
 /*let a = document.getElementById("body");
 let b =  document.getElementById("label");
